@@ -12,5 +12,12 @@
     "request": "^2.88.0",
     "require": "^2.4.20",
     "sequelize": "^4.39.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   }
+
 }
