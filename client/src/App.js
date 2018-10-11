@@ -12,7 +12,7 @@ class App extends Component {
     event.preventDefault();
     console.log("onclick");
     var queryURL = "https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b";
-    Window.location=queryURL;
+    // Window.location=queryURL;
     //this.props.history.push("https://www.google.com");
   };
   
@@ -21,12 +21,14 @@ class App extends Component {
     return (
       <div>
         <h1>Lets Dev</h1>
-        <AuthButton
+        <a href="https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b">Link</a>
+        {/* <AuthButton
           onClick={this.handleAuth}
           className="subbtn"
+          href="https://www.google.com"
         >
           Login
-        </AuthButton>
+        </AuthButton> */}
       </div>
     );
   }
