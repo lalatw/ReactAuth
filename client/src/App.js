@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import AuthButton from "./components/AuthButton";
-
 
 class App extends Component {
   state = {
@@ -11,8 +11,9 @@ class App extends Component {
   handleAuth = event => {
     event.preventDefault();
     console.log("onclick");
-    var queryURL = "https://github.com/login/oauth/authorize?client_id=e52b2491623d91b826f2&state=active";
+    var queryURL = "https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b";
     Window.location=queryURL;
+    //this.props.history.push("https://www.google.com");
   };
   
   
