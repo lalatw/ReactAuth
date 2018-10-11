@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-require("./routes/api/auth.js")(app);
+require("routes/api/auth.js")(app);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
