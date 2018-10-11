@@ -11,7 +11,7 @@ module.exports = function(app) {
     app.get("/github/callback/", function(req, res) {
         var session_code = req.query.code;
         console.log(session_code);
-        res.sendFile(path.join(__dirname, "../client/public/index.html"));
+        // res.sendFile(path.join(__dirname, "../client/public/index.html"));
 
         request({
             url:"https://github.com/login/oauth/access_token",
