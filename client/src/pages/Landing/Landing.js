@@ -49,7 +49,7 @@ class Landing extends Component {
     handleAuth = () => {
         // const { cookies } = this.props;
         //var userName = cookies.get("login");
-         var userName = "lalatw";
+         var userName = "consolelogusername";
          console.log(userName);
       if (userName) {
           this.setState({
