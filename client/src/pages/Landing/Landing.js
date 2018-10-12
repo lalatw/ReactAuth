@@ -31,16 +31,19 @@ class Landing extends Component {
         }
     };
 
-
+ 
     handleAuth = () => {
-        var userName = cookies.get("login");
-        if (userName) {
-            this.setState({
-                isAuthenticated: true
-            });
-        }
-
+      var userName = cookies.get("login");
+      console.log(userName);
+    //   var userName = "lalatw";
+      if (userName) {
+          this.setState({
+              isAuthenticated: true
+          });
+      }
+    
     }
+
 
 
     render() {
