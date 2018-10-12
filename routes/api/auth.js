@@ -49,7 +49,7 @@ module.exports = function(app) {
                             console.log(cookies.get("email"));
                             console.log(cookies.get("name"));
                             console.log(cookies.get("avatar_url"));
-                            window.location.replace("https://enigmatic-refuge-96879.herokuapp.com/");
+                            window.location="https://enigmatic-refuge-96879.herokuapp.com/";
             
                         }
             
