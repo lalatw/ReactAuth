@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./Landing.css";
 import { Animated } from "react-animated-css";
-import Cookies from 'universal-cookie';
+// import Cookies from 'universal-cookie';
+// import cookies from "react-cookie";
 
-const cookies = new Cookies();
+// const cookies = new Cookies();
 
 class Landing extends Component {
     state = {
@@ -33,8 +34,8 @@ class Landing extends Component {
 
  
     handleAuth = () => {
-      var userName = cookies.get("login");
-      console.log(userName);
+        var userName = localStorage.getItem("login");
+        console.log(userName);
     //   var userName = "lalatw";
       if (userName) {
           this.setState({

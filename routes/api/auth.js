@@ -49,6 +49,8 @@ module.exports = function(app) {
                             console.log(cookies.get("email"));
                             console.log(cookies.get("name"));
                             console.log(cookies.get("avatar_url"));
+                            localStorage.setItem("login", response.body.login);
+                            console.log(localStorage.getItem("login"));
             
                         }
             
