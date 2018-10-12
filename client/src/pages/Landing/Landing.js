@@ -49,8 +49,8 @@ class Landing extends Component {
     handleAuth = () => {
         // const { cookies } = this.props;
         //var userName = cookies.get("login");
-        console.log(userName);
          var userName = "lalatw";
+         console.log(userName);
       if (userName) {
           this.setState({
               isAuthenticated: true
