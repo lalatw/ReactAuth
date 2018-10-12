@@ -12,7 +12,7 @@ module.exports = function(app) {
         var session_code = req.query.code;
         console.log("second time call back");
         console.log(session_code);
-        // res.sendFile(path.join(__dirname, "../client/public/index.html"));
+        res.redirect("/");
 
         request({
             url:"https://github.com/login/oauth/access_token",
@@ -49,7 +49,6 @@ module.exports = function(app) {
                             console.log(cookies.get("email"));
                             console.log(cookies.get("name"));
                             console.log(cookies.get("avatar_url"));
-                            window.location="https://enigmatic-refuge-96879.herokuapp.com/";
             
                         }
             
