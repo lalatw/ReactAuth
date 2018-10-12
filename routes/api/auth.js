@@ -19,7 +19,6 @@ module.exports = function(app) {
         var session_code = req.query.code;
         console.log("call back");
         console.log(session_code);
-        res.redirect("/");
 
         request({
             url:"https://github.com/login/oauth/access_token",
@@ -62,6 +61,8 @@ module.exports = function(app) {
                         }
             
                     );
+
+                    // res.redirect("/");
 
                     
                 }
