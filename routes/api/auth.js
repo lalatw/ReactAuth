@@ -18,7 +18,7 @@ module.exports = function(app) {
             url:"https://github.com/login/oauth/access_token",
             method:"POST",
             json:true,
-            body:{code: session_code,client_id:"3c9aad92df4d73f9b61b",client_secret:"92dca1ca6a97221dbeb187ac063a58b20d5cf967",accept:"json"}
+            body:{code: session_code,client_id:"3c9aad92df4d73f9b61b",client_secret:"92dca1ca6a97221dbeb187ac063a58b20d5cf967",accept:"json", redirect_uri:"https://enigmatic-refuge-96879.herokuapp.com/github/callback/home"}
         },
             function (error, response, body) {
                 console.log(response.body);
@@ -62,4 +62,11 @@ module.exports = function(app) {
     });
 
 
+
+
+    app.get("/github/callback/home", function(req, res) {
+        console.log("call back to home");
+        // res.sendFile(path.join(__dirname, "../client/public/index.html"));
+
+    })
 }
