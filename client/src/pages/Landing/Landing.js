@@ -1,16 +1,29 @@
 import React, { Component } from "react";
 import "./Landing.css";
 import { Animated } from "react-animated-css";
-// import Cookies from 'universal-cookie';
-// import cookies from "react-cookie";
+// import { instanceOf } from 'prop-types';
+// import { withCookies, Cookies } from 'react-cookie';
+// import { CookiesProvider } from 'react-cookie';
 
-// const cookies = new Cookies();
 
 class Landing extends Component {
     state = {
         j: 0,
         isAuthenticated: false
     };
+
+    // static propTypes = {
+    //     cookies: instanceOf(Cookies).isRequired
+    //   };
+
+    // constructor(props) {
+    //     super(props);
+     
+    //     const { cookies } = props;
+    //     this.state = {
+    //       userName: cookies.get('login') 
+    //     };
+    //   }
 
     
     componentDidMount() {
@@ -34,9 +47,10 @@ class Landing extends Component {
 
  
     handleAuth = () => {
-        var userName = localStorage.getItem("login");
+        // const { cookies } = this.props;
+        //var userName = cookies.get("login");
         console.log(userName);
-    //   var userName = "lalatw";
+         var userName = "lalatw";
       if (userName) {
           this.setState({
               isAuthenticated: true
@@ -45,10 +59,15 @@ class Landing extends Component {
     
     }
 
+    handleLogout = () => {
+        
+    }
+
 
 
     render() {
         return (
+   
             <div className="uk-container-expand landing-container-main">
                 <div className="uk-container uk-container-small">
                     <div className="uk-text-right uk-flex uk-flex-right uk-flex-middle landing-menu">
@@ -121,6 +140,7 @@ class Landing extends Component {
                     </div>
                 </div>
             </div>
+           
         );
     }
 }
