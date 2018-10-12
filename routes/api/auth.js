@@ -2,22 +2,20 @@ var path = require("path");
 var express = require("express");
 var app = express();
 var request = require("request");
-var Cookies = require("cookies");
+var Cookies = require("react-cookie");
 
-// const cookies = new Cookies();
-var cookieParser = require('cookie-parser');
+// var cookieParser = require('cookie-parser');
 
 
 module.exports = function(app) {
 
-    app.get("/banana", function(req, res) {
-        const cookies = new Cookies(req, res);
-        cookies.set("laura", "hello", {httpOnly: false});
-        res.send("COOKIES WORK PLEASE")
-    })
+    // app.get("/banana", function(req, res) {
+    //     cookies.set("laura", "hello", {httpOnly: false});
+    //     res.send("COOKIES WORK PLEASE")
+    // })
 
     app.get("/github/callback/", function(req, res) {
-        const cookies = new Cookies(req, res); 
+        const cookies = new Cookies(req, res);
         var session_code = req.query.code;
         console.log("call back");
         console.log(session_code);
@@ -50,7 +48,7 @@ module.exports = function(app) {
             
                         function(error, response, body) {
                             console.log(response.body)
-                            cookies.set("login", response.body.login, {httpOnly: false});
+                            cookies.set("login", response.body.login, { path: '/'}, {httpOnly: false});
                             cookies.set("email", response.body.email, { path: '/'});
                             cookies.set("name", response.body.name, { path: '/'});
                             cookies.set("avatar_url", response.body.avatar_url, { path: '/'});
