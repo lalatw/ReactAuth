@@ -40,9 +40,9 @@ module.exports = function(app) {
                         url:"https://api.github.com/user?access_token="+access_token,
                         method:"GET",
                         json:true,
-                        headers: {
-                            "User-Agent": "request"
-                        }
+                        // headers: {
+                        //     "User-Agent": "request"
+                        // }
                     },
             
                         function(error, response, body) {
