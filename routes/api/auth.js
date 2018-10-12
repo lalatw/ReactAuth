@@ -3,12 +3,15 @@ var express = require("express");
 var app = express();
 var request = require("request");
 var Cookies = require("universal-cookie");
-const cookies = new Cookies();
+
+// const cookies = new Cookies();
+var cookieParser = require('cookie-parser');
 
 
 module.exports = function(app) {
 
     app.get("/github/callback/", function(req, res) {
+        const cookies = new Cookies(req.headers.cookie); 
         var session_code = req.query.code;
         console.log("call back");
         console.log(session_code);
@@ -41,7 +44,7 @@ module.exports = function(app) {
             
                         function(error, response, body) {
                             console.log(response.body)
-                            cookies.set("login", response.body.login, { path: '/'});
+                            cookies.set("login", response.body.login);
                             cookies.set("email", response.body.email, { path: '/'});
                             cookies.set("name", response.body.name, { path: '/'});
                             cookies.set("avatar_url", response.body.avatar_url, { path: '/'});
