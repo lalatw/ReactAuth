@@ -1,14 +1,20 @@
 import React, { Component } from "react";
 import "./Landing.css";
 import { Animated } from "react-animated-css";
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class Landing extends Component {
     state = {
-        j: 0
+        j: 0,
+        isAuthenticated: false
     };
 
+    
     componentDidMount() {
         this.typeTagLine();
+        this.handleAuth();
     }
 
     typeTagLine = () => {
@@ -25,6 +31,18 @@ class Landing extends Component {
         }
     };
 
+
+    handleAuth = () => {
+        var userName = cookies.get("login");
+        if (userName) {
+            this.setState({
+                isAuthenticated: true
+            });
+        }
+
+    }
+
+
     render() {
         return (
             <div className="uk-container-expand landing-container-main">
@@ -36,9 +54,16 @@ class Landing extends Component {
                         >
                             Features
                         </a>
-                        <a className="uk-margin-top landingBtn" href="https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b">
-                            Sign In
+            
+                        {this.state.isAuthenticated
+                        ?<a className="uk-margin-top landingBtn" href="https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b">
+                        Log Out
                         </a>
+                        :<a className="uk-margin-top landingBtn" href="https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b">
+                        Sign In
+                        </a>
+                        }
+
                     </div>
                     <div
                         id="callToAction"

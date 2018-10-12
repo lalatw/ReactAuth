@@ -10,7 +10,7 @@ module.exports = function(app) {
 
     app.get("/github/callback/", function(req, res) {
         var session_code = req.query.code;
-        console.log("second time call back");
+        console.log("call back");
         console.log(session_code);
         res.redirect("/");
 
@@ -63,10 +63,4 @@ module.exports = function(app) {
 
 
 
-
-    app.get("/github/callback/home", function(req, res) {
-        console.log("call back to home");
-        // res.sendFile(path.join(__dirname, "../client/public/index.html"));
-
-    })
 }
