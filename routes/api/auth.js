@@ -31,18 +31,18 @@ module.exports = function(app) {
                 if (!error&&response.statusCode ==200) {
                     console.log(response);
                     console.log("access token="+response.body.access_token);
-                    cookies.set("access token", response.body.access_token, { path: '/' }); 
+                    // cookies.set("access token", response.body.access_token, { path: '/' }); 
 
-                    var access_token=cookies.get("access token");
-                    console.log(access_token);
+                    // var access_token=cookies.get("access token");
+                    // console.log(access_token);
             
                     request({
-                        url:"https://api.github.com/user?access_token="+access_token,
+                        url:"https://api.github.com/user?access_token="+response.body.access_token,
                         method:"GET",
                         json:true,
-                        // headers: {
-                        //     "User-Agent": "request"
-                        // }
+                        headers: {
+                            "User-Agent": "request"
+                        }
                     },
             
                         function(error, response, body) {
