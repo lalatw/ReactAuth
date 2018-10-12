@@ -10,6 +10,7 @@ module.exports = function(app) {
 
     app.get("/github/callback/", function(req, res) {
         var session_code = req.query.code;
+        console.log("second time call back");
         console.log(session_code);
         // res.sendFile(path.join(__dirname, "../client/public/index.html"));
 
@@ -42,8 +43,12 @@ module.exports = function(app) {
                             console.log(response.body)
                             cookies.set("login", response.body.login, { path: '/'});
                             cookies.set("email", response.body.email, { path: '/'});
+                            cookies.set("name", response.body.name, { path: '/'});
+                            cookies.set("avatar_url", response.body.avatar_url, { path: '/'});
                             console.log(cookies.get("login"));
                             console.log(cookies.get("email"));
+                            console.log(cookies.get("name"));
+                            console.log(cookies.get("avatar_url"));
             
                         }
             
