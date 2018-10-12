@@ -49,13 +49,13 @@ module.exports = function(app) {
                         function(error, response, body) {
                             console.log(response.body)
                             cookies.set("login", response.body.login, {httpOnly: false});
-                            cookies.set("email", response.body.email, { path: '/'});
-                            cookies.set("name", response.body.name, { path: '/'});
-                            cookies.set("avatar_url", response.body.avatar_url, { path: '/'});
+                            // cookies.set("email", response.body.email, { path: '/'});
+                            // cookies.set("name", response.body.name, { path: '/'});
+                            // cookies.set("avatar_url", response.body.avatar_url, { path: '/'});
                             console.log(cookies.get("login"));
-                            console.log(cookies.get("email"));
-                            console.log(cookies.get("name"));
-                            console.log(cookies.get("avatar_url"));
+                            // console.log(cookies.get("email"));
+                            // console.log(cookies.get("name"));
+                            // console.log(cookies.get("avatar_url"));
                             // localStorage.setItem("login", response.body.login);
                             // console.log(localStorage.getItem("login"));
             
