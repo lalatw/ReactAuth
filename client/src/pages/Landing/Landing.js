@@ -36,7 +36,7 @@ class Landing extends Component {
                         >
                             Features
                         </a>
-                        <a className="uk-margin-top landingBtn" href="https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b&redirect_uri=https://enigmatic-refuge-96879.herokuapp.com/github/callback/home">
+                        <a className="uk-margin-top landingBtn" href="https://github.com/login/oauth/authorize?client_id=3c9aad92df4d73f9b61b">
                             Sign In
                         </a>
                     </div>
